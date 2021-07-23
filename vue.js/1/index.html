@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <title>Document</title>
+    <style>
+        .container {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="container grid-lg">
+        <div id="app" v-cloak>
+            <h1> {{ heading }}</h1>
+            <p> {{ toUpperCase(text) }} </p>
+            <p>Imie: {{ name }}</p>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script>
+        new Vue({
+            el:  "#app",
+            data: {
+                heading: "Hello world", 
+                text: "Witaj w swiecie Vue.js!", 
+                name:  ""
+            }, 
+            methods: {
+                toUpperCase: function(value)  {
+                    return value.toUpperCase(); 
+                }, 
+                getName: function() {
+                    this.name = prompt("Podaj swoje imie"); 
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
